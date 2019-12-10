@@ -37,6 +37,7 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
+    "@types/react-helmet": "^5.0.14",
     "prettier": "^1.19.1",
     "typescript": "^3.7.3"
   },
