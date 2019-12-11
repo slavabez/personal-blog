@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 
 interface Props {
-  location: Location,
+  location?: Location,
   title: string,
   children?: ReactNode
 }
@@ -13,7 +13,7 @@ const Layout: React.FC<Props> = ({ children, location, title }: Props) => {
   const rootPath = `/`;
   let header;
 
-  if (location.pathname === rootPath) {
+  if (location && location.pathname === rootPath) {
     header = (
       <h1
         style={{

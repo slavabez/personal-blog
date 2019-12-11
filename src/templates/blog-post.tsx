@@ -21,10 +21,10 @@ interface Props {
 const BlogPostTemplate = (props: Props) => {
   const post = props.data.markdownRemark;
   const siteTitle = props.data.site.siteMetadata.title;
-  const { previous, next } = props.pageContext;
+  const { previous, next, slug } = props.pageContext;
 
   return (
-    <Layout location={window.location} title={siteTitle}>
+    <Layout title={siteTitle} location={slug}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
