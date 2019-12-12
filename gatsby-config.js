@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Blog about Tech`,
+    title: `Slava Tech`,
     author: `Slava Bezgachev`,
-    description: `Slava Bezgachev's personal blog. I occasionally write about tech, software and hardware`,
+    description: `Slava Bezgachev's personal blog. I occasionally write about tech, software and hardware. Slava Bezgachev is a web developer, focusing on all things Javascript.`,
     siteUrl: `https://bezgachev.com/`,
     social: {
       twitter: `slavabez`
@@ -81,12 +81,11 @@ module.exports = {
         trackingId: `UA-69298477-1`
       }
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Slava's Blog`,
+        short_name: `Slog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
