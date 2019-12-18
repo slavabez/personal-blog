@@ -1,10 +1,10 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
+import styled from "styled-components";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { rhythm, scale } from "../utils/typography";
 
 interface Props {
   data: {
@@ -18,6 +18,10 @@ interface Props {
   pageContext: any;
 }
 
+export const Article = styled.article`
+  padding: 0 1rem;
+`;
+
 const BlogPostTemplate = (props: Props) => {
   const post = props.data.markdownRemark;
   const siteTitle = props.data.site.siteMetadata.title;
@@ -29,36 +33,17 @@ const BlogPostTemplate = (props: Props) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
+      <Article>
         <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1)
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
+          <h1>{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.date}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1)
-          }}
-        />
+        <hr />
         <footer>
           <Bio />
         </footer>
-      </article>
+      </Article>
 
       <nav>
         <ul

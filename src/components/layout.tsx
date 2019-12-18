@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import theme from "./../utils/theme"
 
 interface Props {
   location?: Location;
@@ -15,6 +16,9 @@ const PageWrapper = styled.div`
     "header"
     "main"
     "footer";
+    
+   background-color: ${theme.mainColor};
+   color: ${theme.mainContrast};
 
   @media (min-width: 768px) {
     grid-template-areas:
@@ -25,15 +29,13 @@ const PageWrapper = styled.div`
 
 const Header = styled.header`
   grid-area: header;
-  background-color: gray;
+  text-align: center;
 `;
 const Main = styled.main`
   grid-area: main;
-  background-color: orange;
 `;
 const Footer = styled.footer`
   grid-area: footer;
-  background-color: aqua;
 `;
 
 const Layout: React.FC<Props> = ({ children, location, title }: Props) => {
