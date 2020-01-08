@@ -39,23 +39,7 @@ const Footer = styled.footer`
   grid-area: footer;
 `;
 
-const Layout: React.FC<Props> = ({ children, location, title }: Props) => {
-  const rootPath = `/`;
-  let header;
-
-  if (location && location.pathname === rootPath) {
-    header = (
-      <h1>
-        <Link to={`/`}>{title}</Link>
-      </h1>
-    );
-  } else {
-    header = (
-      <h3>
-        <Link to={`/`}>{title}</Link>
-      </h3>
-    );
-  }
+const Layout: React.FC<Props> = ({ children }: Props) => {
   return (
     <PageWrapper>
       <Header />
