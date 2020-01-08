@@ -93,6 +93,22 @@ module.exports = {
         icon: `content/assets/gatsby-icon.png`
       }
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Roboto`,
+            variants: ["500"],
+            subsets: [`latin`]
+          },
+          {
+            family: `Open Sans`,
+            variants: [`400`]
+          }
+        ]
+      }
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`

@@ -1,7 +1,9 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import theme from "./../utils/theme"
+import theme from "./../utils/theme";
+
+import "../utils/normalize.css";
 
 interface Props {
   location?: Location;
@@ -16,14 +18,14 @@ const PageWrapper = styled.div`
     "header"
     "main"
     "footer";
-    
-   background-color: ${theme.mainColor};
-   color: ${theme.mainContrast};
+
+  background-color: ${theme.mainColor};
+  color: ${theme.mainContrast};
 
   @media (min-width: 768px) {
     grid-template-areas:
-      "header main main"
-      "header footer footer";
+      "header main"
+      "header footer";
   }
 `;
 
@@ -31,9 +33,11 @@ const Header = styled.header`
   grid-area: header;
   text-align: center;
 `;
+
 const Main = styled.main`
   grid-area: main;
 `;
+
 const Footer = styled.footer`
   grid-area: footer;
 `;
@@ -59,7 +63,7 @@ const Layout: React.FC<Props> = ({ children, location, title }: Props) => {
     <PageWrapper>
       <Header>{header}</Header>
       <Main>{children}</Main>
-      <Footer>Some content here lol</Footer>
+      <Footer>I'm the footer, yo</Footer>
     </PageWrapper>
   );
 };
