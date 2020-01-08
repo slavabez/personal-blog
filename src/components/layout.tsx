@@ -4,6 +4,8 @@ import { Link } from "gatsby";
 import theme from "./../utils/theme";
 
 import "../utils/normalize.css";
+import "../utils/global.css";
+import Header from "./Header";
 
 interface Props {
   location?: Location;
@@ -27,11 +29,6 @@ const PageWrapper = styled.div`
       "header main"
       "header footer";
   }
-`;
-
-const Header = styled.header`
-  grid-area: header;
-  text-align: center;
 `;
 
 const Main = styled.main`
@@ -61,7 +58,7 @@ const Layout: React.FC<Props> = ({ children, location, title }: Props) => {
   }
   return (
     <PageWrapper>
-      <Header>{header}</Header>
+      <Header />
       <Main>{children}</Main>
       <Footer>I'm the footer, yo</Footer>
     </PageWrapper>
