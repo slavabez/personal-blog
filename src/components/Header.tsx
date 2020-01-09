@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import styled from "styled-components";
 import Image from "gatsby-image";
+import theme from "../utils/theme";
 
 const GET_PROFILE_INFO = graphql`
   {
@@ -32,11 +33,27 @@ const Wrapper = styled.header`
 
   display: flex;
   flex-direction: row;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: calc(100vh - 2rem);
+  }
 `;
 
 const TopOrLeftSection = styled.div`
   display: flex;
   flex-direction: row;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    border-bottom: 2px solid ${theme.mainContrast};
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  
 `;
 
 const BotOrRightSection = styled.div`
@@ -46,6 +63,32 @@ const BotOrRightSection = styled.div`
 
   align-items: center;
   justify-content: space-evenly;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    flex: 0;
+    
+    a {
+      margin: 0.25rem 0;
+      font-size: 1.3rem;
+    }
+  }
+
+  a {
+    // text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    color: ${theme.mainContrast};
+  }
+`;
+
+const NameSpan = styled.span`
+  display: none;
+  font-size: 2rem;
+  
+  @media(min-width: 768px){
+    display: block;
+  }
 `;
 
 const Header: React.FC = () => {
@@ -54,6 +97,21 @@ const Header: React.FC = () => {
 
   console.log(data);
 
+  const imageStyle =
+    window && window.innerWidth && window.innerWidth < 768
+      ? {
+          marginBottom: 0,
+          maxWidth: 50,
+          maxHeight: 50,
+          borderRadius: `50%`
+        }
+      : {
+          marginBottom: 0,
+          maxWidth: 150,
+          maxHeight: 150,
+          borderRadius: `50%`
+        };
+
   return (
     <Wrapper>
       <TopOrLeftSection>
@@ -61,23 +119,20 @@ const Header: React.FC = () => {
           <Image
             fixed={data.avatar.childImageSharp.fixed}
             alt={author}
-            style={{
-              marginBottom: 0,
-              maxWidth: 50,
-              maxHeight: 50,
-              borderRadius: `50%`
-            }}
+            style={imageStyle}
             imgStyle={{
               borderRadius: `50%`
             }}
           />
         </Link>
+        <NameSpan>Slava</NameSpan>
+        <NameSpan>Bezgachev</NameSpan>
       </TopOrLeftSection>
       <BotOrRightSection>
         <Link to={"/about"}>About</Link>
         <Link to={"/blog"}>Blog</Link>
         <a href="https://github.com/slavabez/" target="_blank">
-          Github
+          GitHub
         </a>
       </BotOrRightSection>
     </Wrapper>
