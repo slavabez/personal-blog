@@ -40,9 +40,6 @@ const BlogPostTemplate = (props: Props) => {
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
-        <footer>
-          <Bio />
-        </footer>
       </Article>
 
       <nav>

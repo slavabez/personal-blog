@@ -39,6 +39,7 @@ const Wrapper = styled.header`
     justify-content: center;
 
     min-height: calc(100vh - 2rem);
+    width: 200px;
   }
 `;
 
@@ -52,8 +53,6 @@ const TopOrLeftSection = styled.div`
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
   }
-  
-  
 `;
 
 const BotOrRightSection = styled.div`
@@ -67,7 +66,7 @@ const BotOrRightSection = styled.div`
   @media (min-width: 768px) {
     flex-direction: column;
     flex: 0;
-    
+
     a {
       margin: 0.25rem 0;
       font-size: 1.3rem;
@@ -85,8 +84,8 @@ const BotOrRightSection = styled.div`
 const NameSpan = styled.span`
   display: none;
   font-size: 2rem;
-  
-  @media(min-width: 768px){
+
+  @media (min-width: 768px) {
     display: block;
   }
 `;
@@ -94,8 +93,6 @@ const NameSpan = styled.span`
 const Header: React.FC = () => {
   const data = useStaticQuery(GET_PROFILE_INFO);
   const { author, social } = data.site.siteMetadata;
-
-  console.log(data);
 
   const imageStyle =
     window && window.innerWidth && window.innerWidth < 768
@@ -129,8 +126,8 @@ const Header: React.FC = () => {
         <NameSpan>Bezgachev</NameSpan>
       </TopOrLeftSection>
       <BotOrRightSection>
-        <Link to={"/about"}>About</Link>
-        <Link to={"/blog"}>Blog</Link>
+        <Link to="/about">About</Link>
+        <Link to="/">Blog</Link>
         <a href="https://github.com/slavabez/" target="_blank">
           GitHub
         </a>

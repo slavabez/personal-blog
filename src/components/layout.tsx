@@ -33,6 +33,9 @@ const PageWrapper = styled.div`
 
 const Main = styled.main`
   grid-area: main;
+  
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
 `;
 
 const Footer = styled.footer`
