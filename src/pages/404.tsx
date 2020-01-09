@@ -16,7 +16,6 @@ interface Props {
 
 const NotFoundPage = ({ data }: Props) => {
   const siteTitle = data.site.siteMetadata.title;
-  console.log(data);
 
   return (
     <Layout title={siteTitle}>

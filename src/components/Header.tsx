@@ -95,7 +95,7 @@ const Header: React.FC = () => {
   const { author, social } = data.site.siteMetadata;
 
   const imageStyle =
-    window && window.innerWidth && window.innerWidth < 768
+    typeof window !== "undefined" && window && window.innerWidth && window.innerWidth < 768
       ? {
           marginBottom: 0,
           maxWidth: 50,
