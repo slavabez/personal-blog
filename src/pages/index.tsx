@@ -11,6 +11,7 @@ interface Props {
     site: {
       siteMetadata: {
         title: string;
+        description: string;
       };
     };
   };
@@ -19,11 +20,12 @@ interface Props {
 const BlogIndex = (props: Props) => {
   const { data } = props;
   const siteTitle = data.site.siteMetadata.title;
+  const siteDescription = data.site.siteMetadata.description;
   const posts = data.allMarkdownRemark.edges;
 
   return (
     <Layout title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="All posts" description={siteDescription} />
       {posts.map(({ node }: any) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (
@@ -57,6 +59,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
