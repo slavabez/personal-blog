@@ -6,7 +6,7 @@ import theme from "../utils/theme";
 
 const GET_PROFILE_INFO = graphql`
   {
-    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+    avatar: file(absolutePath: { regex: "/profile_pic.jpg/" }) {
       childImageSharp {
         fixed(width: 150, height: 150) {
           ...GatsbyImageSharpFixed
