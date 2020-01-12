@@ -37,8 +37,11 @@ const Wrapper = styled.header`
   @media (min-width: 768px) {
     flex-direction: column;
     justify-content: center;
+    margin: 2rem 0;
+    
+    border-right: 1px solid ${theme.mainContrast};
 
-    min-height: calc(100vh - 2rem);
+    min-height: calc(100vh - 6rem);
     width: 200px;
   }
 `;

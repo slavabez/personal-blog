@@ -22,6 +22,18 @@ export const Article = styled.article`
   padding: 0 1rem;
 `;
 
+export const PagesNav = styled.nav`
+  padding: 0 1rem;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+  }
+`;
+
 const BlogPostTemplate = (props: Props) => {
   const post = props.data.markdownRemark;
   const siteTitle = props.data.site.siteMetadata.title;
@@ -42,16 +54,8 @@ const BlogPostTemplate = (props: Props) => {
         <hr />
       </Article>
 
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0
-          }}
-        >
+      <PagesNav>
+        <ul>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -67,7 +71,7 @@ const BlogPostTemplate = (props: Props) => {
             )}
           </li>
         </ul>
-      </nav>
+      </PagesNav>
     </Layout>
   );
 };

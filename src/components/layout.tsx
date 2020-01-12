@@ -33,9 +33,17 @@ const PageWrapper = styled.div`
 
 const Main = styled.main`
   grid-area: main;
-  
+
   max-height: calc(100vh - 2rem);
   overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  
+  @media(min-width: 768px) {
+    width: calc(100vw - (200px + 2rem));
+  }
 `;
 
 const Footer = styled.footer`
