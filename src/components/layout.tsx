@@ -14,40 +14,24 @@ interface Props {
 }
 
 const PageWrapper = styled.div`
-  display: grid;
+  display: flex;
   min-height: 100vh;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
-
-  background-color: ${theme.mainColor};
-  color: ${theme.mainContrast};
+  flex-direction: column;
 
   @media (min-width: 768px) {
-    grid-template-areas:
-      "header main"
-      "header footer";
+    flex-direction: row;
   }
 `;
 
 const Main = styled.main`
-  grid-area: main;
-
-  max-height: calc(100vh - 2rem);
   overflow: auto;
 
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  
-  @media(min-width: 768px) {
-    width: calc(100vw - (200px + 2rem));
-  }
-`;
 
-const Footer = styled.footer`
-  grid-area: footer;
+  @media (min-width: 768px) {
+  }
 `;
 
 const Layout: React.FC<Props> = ({ children }: Props) => {
@@ -55,7 +39,6 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
     <PageWrapper>
       <Header />
       <Main>{children}</Main>
-      <Footer>I'm the footer, yo</Footer>
     </PageWrapper>
   );
 };

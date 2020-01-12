@@ -6,10 +6,10 @@ import theme from "../utils/theme";
 
 const GET_PROFILE_INFO = graphql`
   {
-    avatar: file(absolutePath: { regex: "/profile_pic.jpg/" }) {
+    avatar: file(absolutePath: { regex: "/laptop_pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 150, height: 150) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 450) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -27,22 +27,32 @@ const GET_PROFILE_INFO = graphql`
 const Wrapper = styled.header`
   grid-area: header;
   text-align: center;
+  
+  height: 80px;
 
-  padding: 1rem;
-  max-height: calc(85px - 2rem);
+  background-color: ${theme.mainContrast};
+  color: ${theme.mainColor};
+  box-shadow: 0 5px 10px #646464;
+  
+  padding: 10px;
 
   display: flex;
   flex-direction: row;
 
   @media (min-width: 768px) {
     flex-direction: column;
-    justify-content: center;
-    margin: 2rem 0;
-    
+    height: auto;
+
     border-right: 1px solid ${theme.mainContrast};
 
-    min-height: calc(100vh - 6rem);
     width: 200px;
+    padding: 1.5rem;
+    
+    box-shadow: 5px 0 10px #646464;
+  }
+  
+  @media (min-width: 1024px) {
+    width: 350px;
   }
 `;
 
@@ -50,11 +60,28 @@ const TopOrLeftSection = styled.div`
   display: flex;
   flex-direction: row;
 
+  a {
+    width: 80px;
+    height: 80px;
+  }
+
+  img {
+    width: calc(100% - 4px) !important;
+    height: calc(100% - 4px) !important;
+    border: 2px solid ${theme.mainColor};
+  }
+  
   @media (min-width: 768px) {
     flex-direction: column;
     border-bottom: 2px solid ${theme.mainContrast};
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
+    
+    a {
+      width: auto;
+      height: auto;
+      margin-bottom: 1rem;
+    }
   }
 `;
 
@@ -72,21 +99,22 @@ const BotOrRightSection = styled.div`
 
     a {
       margin: 0.25rem 0;
-      font-size: 1.3rem;
+      font-size: 1.8rem;
     }
   }
 
   a {
-    // text-transform: uppercase;
+    color: ${theme.mainColor};
     text-decoration: none;
-    font-weight: 700;
-    color: ${theme.mainContrast};
+    font-weight: 500;
+    font-size: 1.3rem;
   }
 `;
 
 const NameSpan = styled.span`
   display: none;
-  font-size: 2rem;
+  font-size: 2.2rem;
+  font-weight: 700;
 
   @media (min-width: 768px) {
     display: block;
@@ -97,29 +125,13 @@ const Header: React.FC = () => {
   const data = useStaticQuery(GET_PROFILE_INFO);
   const { author, social } = data.site.siteMetadata;
 
-  const imageStyle =
-    typeof window !== "undefined" && window && window.innerWidth && window.innerWidth < 768
-      ? {
-          marginBottom: 0,
-          maxWidth: 50,
-          maxHeight: 50,
-          borderRadius: `50%`
-        }
-      : {
-          marginBottom: 0,
-          maxWidth: 150,
-          maxHeight: 150,
-          borderRadius: `50%`
-        };
-
   return (
     <Wrapper>
       <TopOrLeftSection>
         <Link to={"/"}>
           <Image
-            fixed={data.avatar.childImageSharp.fixed}
+            fluid={data.avatar.childImageSharp.fluid}
             alt={author}
-            style={imageStyle}
             imgStyle={{
               borderRadius: `50%`
             }}
