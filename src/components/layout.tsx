@@ -1,7 +1,5 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
-import theme from "./../utils/theme";
 
 import "../utils/normalize.css";
 import "../utils/global.css";
@@ -29,8 +27,10 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  padding: 0.5rem;
 
   @media (min-width: 768px) {
+    padding: 2rem;
   }
 `;
 

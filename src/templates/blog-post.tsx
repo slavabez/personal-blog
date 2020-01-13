@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import theme from "../utils/theme";
 
 interface Props {
   data: {
@@ -19,7 +20,23 @@ interface Props {
 }
 
 export const Article = styled.article`
-  padding: 0 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 0 5px #cdcdcd;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    margin: 1rem 0;
+
+    a {
+      color: ${theme.mainContrast};
+      text-decoration: none;
+    }
+  }
 `;
 
 export const PagesNav = styled.nav`

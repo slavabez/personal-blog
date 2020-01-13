@@ -1,6 +1,5 @@
 ---
 title: "About me"
-date: "2019-12-12T12:12:12.121Z"
 description: "CV-like blog post about myself, technologies I work with, the kinds of things I've built"
 ---
 
