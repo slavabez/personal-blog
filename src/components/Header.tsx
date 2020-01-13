@@ -107,7 +107,7 @@ const BotOrRightSection = styled.div`
     color: ${theme.mainColor};
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
 `;
 

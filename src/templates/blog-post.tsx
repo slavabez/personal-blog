@@ -2,7 +2,6 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import styled from "styled-components";
 
-import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import theme from "../utils/theme";
@@ -24,7 +23,8 @@ export const Article = styled.article`
   box-shadow: 0 0 5px #cdcdcd;
   border-radius: 10px;
   margin-bottom: 1rem;
-  
+  max-width: 800px;
+
   &:last-of-type {
     margin-bottom: 0;
   }
@@ -65,10 +65,9 @@ const BlogPostTemplate = (props: Props) => {
       <Article>
         <header>
           <h1>{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          {post.frontmatter.date ? <p>{post.frontmatter.data}</p> : null}
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
       </Article>
 
       <PagesNav>

@@ -4,6 +4,8 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { Article } from "../templates/blog-post";
+import styled from "styled-components";
+import theme from "../utils/theme";
 
 interface Props {
   data: {
@@ -17,6 +19,33 @@ interface Props {
   };
 }
 
+const ArticleListItem = styled.article`
+  padding: 0.5rem;
+  box-shadow: 0 0 5px #cdcdcd;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+
+  h3 {
+    margin: 0.5rem 0;
+    font-size: 1.8rem;
+
+    a {
+      color: ${theme.mainContrast};
+      text-decoration: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 0.5rem 1rem;
+    max-width: 800px;
+  }
+`;
+
+const ReadMore = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
 const BlogIndex = (props: Props) => {
   const { data } = props;
   const siteTitle = data.site.siteMetadata.title;
@@ -29,7 +58,7 @@ const BlogIndex = (props: Props) => {
       {posts.map(({ node }: any) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (
-          <Article key={node.fields.slug}>
+          <ArticleListItem key={node.fields.slug}>
             <header>
               <h3>
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
@@ -45,7 +74,10 @@ const BlogIndex = (props: Props) => {
                 }}
               />
             </section>
-          </Article>
+            <ReadMore>
+              <Link to={node.fields.slug}>Read more...</Link>
+            </ReadMore>
+          </ArticleListItem>
         );
       })}
     </Layout>
