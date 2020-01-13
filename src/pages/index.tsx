@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { Article } from "../templates/blog-post";
 import styled from "styled-components";
 import theme from "../utils/theme";
 
