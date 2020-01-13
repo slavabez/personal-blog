@@ -27,13 +27,13 @@ const GET_PROFILE_INFO = graphql`
 const Wrapper = styled.header`
   grid-area: header;
   text-align: center;
-  
+
   height: 80px;
 
   background-color: ${theme.mainContrast};
   color: ${theme.mainColor};
   box-shadow: 0 5px 10px #646464;
-  
+
   padding: 10px;
 
   display: flex;
@@ -47,10 +47,10 @@ const Wrapper = styled.header`
 
     width: 200px;
     padding: 1.5rem;
-    
+
     box-shadow: 5px 0 10px #646464;
   }
-  
+
   @media (min-width: 1024px) {
     width: 350px;
   }
@@ -65,22 +65,27 @@ const TopOrLeftSection = styled.div`
     height: 80px;
   }
 
-  img {
+  .gatsby-image-wrapper {
     width: calc(100% - 4px) !important;
     height: calc(100% - 4px) !important;
-    border: 2px solid ${theme.mainColor};
+    border-radius: 50%;
+    box-shadow: 0 0 5px ${theme.mainColor};
   }
-  
+
   @media (min-width: 768px) {
     flex-direction: column;
     border-bottom: 2px solid ${theme.mainContrast};
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    
+
     a {
       width: auto;
       height: auto;
       margin-bottom: 1rem;
+    }
+
+    .gatsby-image-wrapper {
+      box-shadow: 0 0 10px ${theme.mainColor};
     }
   }
 `;
@@ -107,7 +112,7 @@ const BotOrRightSection = styled.div`
     color: ${theme.mainColor};
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 `;
 
@@ -129,13 +134,7 @@ const Header: React.FC = () => {
     <Wrapper>
       <TopOrLeftSection>
         <Link to={"/"}>
-          <Image
-            fluid={data.avatar.childImageSharp.fluid}
-            alt={author}
-            imgStyle={{
-              borderRadius: `50%`
-            }}
-          />
+          <Image fluid={data.avatar.childImageSharp.fluid} alt={author} />
         </Link>
         <NameSpan>Slava</NameSpan>
         <NameSpan>Bezgachev</NameSpan>
