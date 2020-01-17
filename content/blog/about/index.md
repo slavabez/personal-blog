@@ -1,5 +1,5 @@
 ---
-title: "About me"
+title: "(SITE UNDER DEVELOPMENT) About me"
 description: "CV-like blog post about myself, technologies I work with, the kinds of things I've built"
 ---
 
