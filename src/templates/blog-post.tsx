@@ -20,7 +20,7 @@ interface Props {
 
 export const Article = styled.article`
   padding: 0.5rem;
-  box-shadow: 0 0 5px #cdcdcd;
+  box-shadow: 2px 2px 4px #cdcdcd;
   border-radius: 10px;
   margin-bottom: 1rem;
   max-width: 800px;

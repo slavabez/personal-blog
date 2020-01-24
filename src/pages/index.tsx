@@ -20,9 +20,12 @@ interface Props {
 
 const ArticleListItem = styled.article`
   padding: 0.5rem;
-  box-shadow: 0 0 5px #cdcdcd;
+  box-shadow: 2px 2px 4px #cdcdcd;
   border-radius: 10px;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h3 {
     margin: 0.5rem 0;
@@ -38,11 +41,26 @@ const ArticleListItem = styled.article`
     padding: 0.5rem 1rem;
     max-width: 800px;
   }
+
+  small {
+    align-self: flex-end;
+  }
+
+  section {
+    width: 90%;
+  }
 `;
 
 const ReadMore = styled.div`
   display: flex;
   justify-content: flex-end;
+  align-items: flex-start;
+`;
+
+const HeaderSection = styled.header`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 `;
 
 const BlogIndex = (props: Props) => {
@@ -58,14 +76,16 @@ const BlogIndex = (props: Props) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (
           <ArticleListItem key={node.fields.slug}>
-            <header>
+            <HeaderSection>
               <h3>
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
+              <ReadMore>
+                <Link to={node.fields.slug}>{">"}</Link>
+              </ReadMore>
+            </HeaderSection>
             <section>
               <p
                 dangerouslySetInnerHTML={{
@@ -73,9 +93,7 @@ const BlogIndex = (props: Props) => {
                 }}
               />
             </section>
-            <ReadMore>
-              <Link to={node.fields.slug}>Read more...</Link>
-            </ReadMore>
+            <small>{node.frontmatter.date}</small>
           </ArticleListItem>
         );
       })}
