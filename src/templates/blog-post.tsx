@@ -65,7 +65,7 @@ const BlogPostTemplate = (props: Props) => {
       <Article>
         <header>
           <h1>{post.frontmatter.title}</h1>
-          {post.frontmatter.date ? <p>{post.frontmatter.data}</p> : null}
+          {post.frontmatter.date ? <p>{post.frontmatter.date}</p> : null}
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
       </Article>

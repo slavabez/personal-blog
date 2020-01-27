@@ -52,7 +52,7 @@ const Wrapper = styled.header`
   }
 
   @media (min-width: 1024px) {
-    width: 350px;
+    min-width: 300px;
   }
 `;
 
