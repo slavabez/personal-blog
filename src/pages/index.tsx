@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import styled from "styled-components";
 import theme from "../utils/theme";
+import { ArrowSvg } from "../components/svgs";
 
 interface Props {
   data: {
@@ -20,8 +21,7 @@ interface Props {
 
 const ArticleListItem = styled.article`
   padding: 0.5rem;
-  box-shadow: 2px 2px 4px #cdcdcd;
-  border-radius: 10px;
+  box-shadow: 2px 2px 2px #cdcdcd;
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
@@ -61,6 +61,7 @@ const HeaderSection = styled.header`
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const BlogIndex = (props: Props) => {
@@ -83,7 +84,9 @@ const BlogIndex = (props: Props) => {
                 </Link>
               </h3>
               <ReadMore>
-                <Link to={node.fields.slug}>{">"}</Link>
+                <Link to={node.fields.slug}>
+                  <ArrowSvg />
+                </Link>
               </ReadMore>
             </HeaderSection>
             <section>

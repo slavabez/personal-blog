@@ -66,8 +66,6 @@ const TopOrLeftSection = styled.div`
   }
 
   .gatsby-image-wrapper {
-    width: calc(100% - 4px) !important;
-    height: calc(100% - 4px) !important;
     border-radius: 50%;
   }
 
