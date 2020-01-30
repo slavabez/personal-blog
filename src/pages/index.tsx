@@ -21,7 +21,7 @@ interface Props {
 
 const ArticleListItem = styled.article`
   padding: 0.5rem;
-  box-shadow: 2px 2px 2px #cdcdcd;
+  box-shadow: 4px 4px 8px 2px #cdcdcd;
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;

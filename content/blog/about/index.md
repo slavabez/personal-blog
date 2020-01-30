@@ -5,6 +5,9 @@ description: "CV-like blog post about myself, technologies I work with, the kind
 
 My name is Slava Bezgachev and I'm a full stack web developer. I'm from Kazakhstan, and I lived in the UK for 10 years. I consider myself pretty good at the following tech.
 
+![Slava Bezgachev picture](./profile_pic.jpg)
+
+[CV](./CV_Slava_Bezgachev.pdf)
 ## Tech
 ### Javascript
 
@@ -24,3 +27,4 @@ My name is Slava Bezgachev and I'm a full stack web developer. I'm from Kazakhst
 Check out my [GitHub page](https://github.com/slavabez).
 
 [Stack Overflow Story](https://stackoverflow.com/users/story/2237238)
+

@@ -103,6 +103,7 @@ const BotOrRightSection = styled.div`
   }
 
   a {
+    font-family: "Open Sans", Arial, serif;
     color: ${theme.mainColor};
     text-decoration: none;
     font-weight: 500;
@@ -116,6 +117,7 @@ const BotOrRightSection = styled.div`
 `;
 
 const NameSpan = styled.span`
+  font-family: "Open Sans", sans-serif;
   display: none;
   font-size: 2.2rem;
   font-weight: 700;

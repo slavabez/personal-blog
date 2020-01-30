@@ -100,13 +100,13 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Roboto`,
-            variants: ["500"],
+            family: `Montserrat`,
+            variants: ["400"],
             subsets: [`latin`]
           },
           {
             family: `Open Sans`,
-            variants: [`400`]
+            variants: [`400`,`700`]
           }
         ]
       }

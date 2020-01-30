@@ -20,8 +20,8 @@ interface Props {
 
 export const Article = styled.article`
   padding: 0.5rem;
-  box-shadow: 2px 2px 4px #cdcdcd;
-  border-radius: 10px;
+  // box-shadow: 4px 4px 4px #cdcdcd;
+  // border-radius: 10px;
   margin-bottom: 1rem;
   max-width: 800px;
 
@@ -36,6 +36,10 @@ export const Article = styled.article`
       color: ${theme.mainContrast};
       text-decoration: none;
     }
+  }
+  
+  @media(min-width: 768px) {
+    padding: 0;
   }
 `;
 
