@@ -87,12 +87,12 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Slava's Blog`,
-        short_name: `Slog`,
+        short_name: `Slava B.`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#323232`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`
+        icon: `content/assets/profile_pic.jpg`
       }
     },
     {
