@@ -1,9 +1,9 @@
 ---
-title: "About me (WiP)"
+title: "About me"
 description: "CV-like blog post about myself, technologies I work with, the kinds of things I've built"
 ---
 
-My name is Slava Bezgachev and I'm a full stack web developer. I'm from Kazakhstan, and I lived in the UK for 10 years. I consider myself pretty good at both front-end and back-end development with Javascript, with the help such tools as Node, React and many others. 
+My name is **Slava Bezgachev** and I'm a full stack web developer. I'm from Kazakhstan, and I lived in the UK for 10 years. I consider myself pretty good at both front-end and back-end development with Javascript, with the help such tools as Node, React and many others. 
 
 You can download [my CV here](./CV_Slava_Bezgachev.pdf), check out my [GitHub page here](https://github.com/slavabez) and also there's a neat [Stack Overflow Story](https://stackoverflow.com/users/story/2237238) where you can see my education and work history timeline.
 
@@ -28,4 +28,3 @@ You can download [my CV here](./CV_Slava_Bezgachev.pdf), check out my [GitHub pa
 
 My main development machine is the awesome Lenovo ThinkPad X1 Extreme gen 2. Check out my [Uses page](/uses) for a more detailed look.
 
-![Slava Bezgachev picture](./profile_pic.jpg)
