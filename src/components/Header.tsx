@@ -66,7 +66,18 @@ const TopOrLeftSection = styled.div`
   }
 
   .gatsby-image-wrapper {
-    border-radius: 50%;
+    z-index: 10;
+
+    img,
+    picture {
+      border-radius: 50%;
+    }
+
+    &::after {
+      background-color: gray;
+      z-index: 5;
+      content: "";
+    }
   }
 
   @media (min-width: 768px) {
@@ -82,7 +93,11 @@ const TopOrLeftSection = styled.div`
     .gatsby-image-wrapper {
       width: calc(70% - 4px) !important;
       margin: auto;
-      border-radius: 50%;
+
+      img,
+      picture {
+        border-radius: 50%;
+      }
     }
   }
 `;
@@ -127,6 +142,17 @@ const NameSpan = styled.span`
   }
 `;
 
+const DecorativeCircleBottom = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+`;
+const DecorativeCircleTop = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: orange;
+`;
+
 const Header: React.FC = () => {
   const data = useStaticQuery(GET_PROFILE_INFO);
   const { author, social } = data.site.siteMetadata;
@@ -136,6 +162,8 @@ const Header: React.FC = () => {
       <TopOrLeftSection>
         <Link to={"/"}>
           <Image fluid={data.avatar.childImageSharp.fluid} alt={author} />
+          {/*<DecorativeCircleBottom />
+          <DecorativeCircleTop />*/}
         </Link>
         <NameSpan>Slava</NameSpan>
         <NameSpan>Bezgachev</NameSpan>
